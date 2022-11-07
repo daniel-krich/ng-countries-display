@@ -1,0 +1,8 @@
+<div *ngIf="this.countriesData.countries[this.currentCountryIndex]" class="country">
+    <app-countries-navigation (navigationNextEvent)="onSwitchCountry($event)"></app-countries-navigation>
+
+    <p class="country-name">{{this.countriesData.countries[this.currentCountryIndex].name.common}} ({{this.currentCountryIndex + 1}})</p>
+
+    <app-country-image [countryName]="this.countriesData.countries[this.currentCountryIndex].name.common"
+                       [countryImageSrc]="this.countriesData.countries[this.currentCountryIndex].flags.png"></app-country-image>
+</div>
