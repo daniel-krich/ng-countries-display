@@ -1,0 +1,36 @@
+.controller-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10px 5px;
+
+    .controller-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 10px;
+        
+
+        input[type=text] {
+            outline: none;
+            padding: 5px 15px;
+            border: 1px solid #21212130;
+            border-radius: 10px;
+            font-size: 18px;
+
+            &::placeholder {
+                color: #21212180;
+            }
+        }
+
+        label {
+            font-size: 18px;
+            color: #21212180;
+            margin-left: 5px;
+        }
+
+        &:not(:last-child) {
+            padding-right: 20px;
+            border-right: 2px solid #21212150;
+        }
+    }
+}

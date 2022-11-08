@@ -1,0 +1,11 @@
+<div class="controller-wrapper">
+    <div class="controller-item">   
+        <input type="text" placeholder="Search..." [(ngModel)]="searchInput" (keyup)="onSearchInput()">
+    </div>
+    
+    <div class="controller-item">
+        <input type="checkbox" id="controller-toggle-flip" (change)="onFlipChanged($event)" checked>
+        <label for="controller-toggle-flip">Enable card flip</label>
+    </div>
+
+</div>

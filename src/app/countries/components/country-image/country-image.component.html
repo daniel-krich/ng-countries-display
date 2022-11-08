@@ -1,10 +1,14 @@
 <div class="flip-card">
-    <div class="flip-card-inner">
+    <div [ngClass]="{'flip-disable': !canFlip}" class="flip-card-inner">
       <div class="flip-card-front">
         <img [src]="this.countryImageSrc" [alt]="this.countryName">
       </div>
       <div class="flip-card-back">
-        <h1 [innerText]="this.countryName"></h1> 
+        <h1 [innerText]="this.countryName"></h1>
+        <h3>{{population | numberFormatter}} residents</h3>
+        <div class="card-remove-wrapper">
+            <button (click)="onRemoveCountry()"></button>
+        </div>
       </div>
     </div>
-  </div>
+</div>

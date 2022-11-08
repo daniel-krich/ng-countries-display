@@ -5,18 +5,28 @@ import { CountriesNavigationComponent } from './components/countries-navigation/
 import { HttpClientModule } from '@angular/common/http';
 import { CountryImageComponent } from './components/country-image/country-image.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
+import { NumberFormatterPipe } from './pipes/number-formatter.pipe';
+import { CountriesDataService } from './services/countries-data.service';
+import { CountriesFilterControllerComponent } from './components/countries-filter-controller/countries-filter-controller.component';
+import { FormsModule } from '@angular/forms';
+import { CountriesSearchFilterPipe } from './pipes/countries-search-filter.pipe';
 
 @NgModule({
   declarations: [
     CountryComponent,
     CountriesNavigationComponent,
     CountryImageComponent,
-    CountryListComponent
+    CountryListComponent,
+    NumberFormatterPipe,
+    CountriesFilterControllerComponent,
+    CountriesSearchFilterPipe
   ],
   imports: [
     CommonModule,
+    FormsModule,
     HttpClientModule
   ],
+  providers: [CountriesDataService],
   exports: [CountryComponent, CountryListComponent]
 })
 export class CountriesModule { }

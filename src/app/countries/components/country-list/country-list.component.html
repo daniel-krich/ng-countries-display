@@ -1,6 +1,12 @@
+<app-countries-filter-controller (searchInputEvent)="onSearchInputChanged($event)"
+                                 (flipInputEvent)="onFlipToggleChanged($event)"></app-countries-filter-controller>
+
 <div class="country-list" *ngIf="this.countriesData.countries[0]">
-    <span *ngFor="let country of this.countriesData.countries">
+    <span *ngFor="let country of this.countriesData.countries | countriesSearchFilter: searchInput">
         <app-country-image [countryName]="country.name.common"
-                        [countryImageSrc]="country.flags.png"></app-country-image>
+                           [countryImageSrc]="country.flags.png"
+                           [canFlip]="flipToggle"
+                           [flagCode]="country.flag"
+                           [population]="country.population"></app-country-image>
     </span>
 </div>

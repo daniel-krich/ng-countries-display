@@ -8,9 +8,20 @@ import { CountriesDataService } from '../../services/countries-data.service';
 })
 export class CountryListComponent implements OnInit {
 
+    public searchInput: string = '';
+    public flipToggle: boolean = true;
+
     constructor(public countriesData : CountriesDataService) { }
 
     ngOnInit(): void {
+    }
+
+    public onSearchInputChanged(searchInput: string) : void {
+        this.searchInput = searchInput;
+    }
+
+    public onFlipToggleChanged(flipToggle: boolean) : void {
+        this.flipToggle = flipToggle;
     }
 
 }

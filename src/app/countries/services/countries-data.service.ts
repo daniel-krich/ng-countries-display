@@ -16,4 +16,15 @@ export class CountriesDataService {
     public get countries() : Array<Country> {
         return [...this._countries];
     }
+
+    public removeCountry(flagCode: string) : void {
+        const countryIndex: number = this._countries.findIndex(x => x.flag === flagCode);
+        if(countryIndex >= 0) {
+            this._countries.splice(countryIndex, 1);
+        }
+        else {
+            throw new Error('flagCode not found');
+        }
+        
+    }
 }
