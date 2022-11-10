@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Country } from '../models/country.model';
+import { Country } from '../interfaces/country.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CountriesDataService {
 
     private _countries: Array<Country> = new Array<Country>();

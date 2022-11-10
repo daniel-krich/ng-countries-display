@@ -13,8 +13,7 @@ export class CountryListComponent implements OnInit {
 
     constructor(public countriesData : CountriesDataService) { }
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void { }
 
     public onSearchInputChanged(searchInput: string) : void {
         this.searchInput = searchInput;
